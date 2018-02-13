@@ -1,0 +1,8 @@
+Idea #1:
+
+The website picks up the user's location, and based on the weather in that area, we will suggest music, food, and movies/TV
+shows to watch. In addition to that, we will give the user some activities to do or places to visit near them, in case it is nice
+outside. We will use a database (Mongo) to store the user's history. In order to get accurate suggestions, we will take
+into consideration the user's gender, age, and so on.
+APIs: Weather, Yelp, Spotify, OMDb or The Movie DB.
+Third party authentication: Twitter/Facebook
