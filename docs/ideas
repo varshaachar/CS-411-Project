@@ -6,3 +6,12 @@ outside. We will use a database (Mongo) to store the user's history. In order to
 into consideration the user's gender, age, and so on.
 APIs: Weather, Yelp, Spotify, OMDb or The Movie DB.
 Third party authentication: Twitter/Facebook
+
+Idea #2:
+
+The website will access the user's individual fitbit data along with picking up the user's location to form workout plans,
+meal plans, and suggest points of interest near the user. Since counting the user's steps is a large focus for fitbit and the user,
+the suggested points of interest will be based on the user's history that may help them achieve their stepping goal, for example 
+a local hiking trail. We will again be using a database (Mongo) to store the user's history.
+APIs: Fitbit, Google Maps, FoodCare, 
+Third Party authentication: Twitter/Facebook
