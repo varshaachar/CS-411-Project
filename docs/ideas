@@ -15,3 +15,6 @@ the suggested points of interest will be based on the user's history that may he
 a local hiking trail. We will again be using a database (Mongo) to store the user's history.
 APIs: Fitbit, Google Maps, FoodCare, 
 Third Party authentication: Twitter/Facebook
+
+
+That's it!
