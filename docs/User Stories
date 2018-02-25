@@ -1,0 +1,19 @@
+User Story 1:
+  Register on the website with general information such as name, username, password, gender, age, height and weight. We will also ask
+  the user for additional information including step goal, dietary restrictions, and sleeping habits. The user can later update all
+  of the information given if any changes occur.
+  
+User Story 2:
+  Logged in user can update their personal information by clicking on the Profile tab then click the update link/button. User will be
+  able to update weight, goals, diet and more options that are a part of general information collected.
+  
+User Story 3:
+  Logged in user wants access to food options either eating in or eating out. If the user is to pick eating in, depending on the user's
+  dietary restrictions, reipes will be given for healthy food options. If they prefer to eat out, based on their location we will supply
+  a list of nearby healthy restaurants that are available to the user.
+  
+User Story 4:
+  Logged in user is looking for a new workout routine at that moment. Based on personal preference, we can access the user's location
+  to request nearby training facilities/gyms or even trainers that are available to the public. If the user would rather have a DIY
+  workout plan, we will supply videos of exercises the user can do at home.
+
