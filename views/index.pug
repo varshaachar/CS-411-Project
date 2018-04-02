@@ -1,16 +1,43 @@
-extends layout
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width')
+  meta(name='description' content='Helping to lead a healthier life')
+  meta(name='keywords' content='health, fitness, diet')
+  meta(name='author' content='Varsha Achar')
+  title Fitbit App | Login
+  link(rel='stylesheet' href='./css/style.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+header
+  .container
+    #branding
+      h1
+        span.highlight  FITBIT
+        |  APP
+    nav
+      ul
+        li
+          a(href='signup.html')  No account? SIGN UP!
+section#login
+  .container
+    h1  LOGIN
+    #inputs.form-group
+      form(method='post' action="{{ url_for('register_user') }}" align='center')
+        // ??????
+        p
+          | E-mail:
+          input#inputbox.form-control(type='email' name='email' placeholder='Enter email address' required='')
+        p
+          | Password:
+          input#inputbox.form-control(type='password' name='password' placeholder='Enter password' required='')
+        #spacer
+        input#loginbtn.btn.btn-primary(type='submit' value='Login')
+        // Add action for these two buttons
+        #spacer
+      input#fblogin.btTxt.submit(type='image' src='./img/facebook-login.png' name='fblogin')
+footer
+  p  Fitbit App Copyright &copy; 2017
 
-block content
-    h1 Search for places to get fit!
-    form#searchBar(action='/' method='POST')
-                    p Enter a keyword:
-                    input(type='text' placeholder='Enter fitness place' name='term' id  = 'term')
-                    p Enter the location:
-                    input(type='text' placeholder='City or Address' name='location' id  = 'location')
-                    button.fa.fa-search(type='submit' id  = 'submit') Search
 
-    p Top search result for #{term} in #{location}:
-    p Name: #{name}
-    p Rating: #{rating}
-    p Address: #{address}
-    p Phone: #{phone}
+
+

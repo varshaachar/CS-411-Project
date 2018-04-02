@@ -15,12 +15,12 @@ router = express.Router();
 app = express();
 
 const yelp = require('yelp-fusion');
-// yelp api key hidden
+const api_key = 'bfo0qpJ7RAoVa_CMt-TYVTG1pNFWaEE_t2QQYn7PGAdFM03USgsyBWm_2huuFnGExakrN1ag4v-TYdAmn-ywmDXp9tIS9e8uTmRlm_dKjkgauxqikWusn-vy9se6WnYx';
 const client = yelp.client(api_key);
 
 /* GET home page. */
 app.get('/', function (req, res) {
-    res.render('index');
+    res.render('fitness');
 })
 ;
 
@@ -55,7 +55,7 @@ app.post('/', function (req, res) {
         firstResult.rating = r.rating;
         const prettyJson = JSON.stringify(firstResult, null, 4);
 
-        res.render('index', {
+        res.render('fitness', {
             term: searchRequest.term,
             location: searchRequest.location,
             name: firstResult.name,

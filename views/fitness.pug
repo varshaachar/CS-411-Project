@@ -1,0 +1,112 @@
+doctype html
+head
+
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width')
+  meta(name='description' content='Helping to lead a healthier life')
+  meta(name='keywords' content='health, fitness, diet')
+  meta(name='author' content='Varsha Achar')
+  title Fitbit App | Fitness
+  link(rel='stylesheet', href='/stylesheets/style.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+header
+  .container
+    #branding
+      h1  FITBIT APP
+    nav
+      ul
+        li
+          a(href='homepage.html')  HOME
+        li
+          a(href='fitness.html')  FITNESS
+        li
+          a(href='homepage.html')  FOOD
+        li
+          span(onclick='openNav()')  MORE
+.tab
+  button.tablinks(onclick="openCity(event, 'facilities')") Facilites
+  button.tablinks(onclick="openCity(event, 'diy')") Do It Yourself
+#facilities.tabcontent
+  h2 Recommended activities near you
+  p What information would you like?
+  label.cont
+    | Gym
+    input#gymCheck(type='checkbox' onclick='gymCheck()')
+    span.checkmark
+  #spacer
+  p
+    block content
+        p#gymText(style='display:none')
+            form#searchBar(action='/' method='POST')
+                    p Enter a keyword:
+                    input(type='text' placeholder='Enter fitness place' name='term' id  = 'term')
+                    p Enter the location:
+                    input(type='text' placeholder='City or Address' name='location' id  = 'location')
+                    button.fa.fa-search(type='submit' id  = 'submit') Search
+
+        p Name: #{name}
+        p Rating: #{rating}
+        p Address: #{address}
+        p Phone: #{phone}
+  #spacer
+  label.cont
+    | Yoga
+    input#yogaCheck(type='checkbox' onclick='yogaCheck()')
+    span.checkmark
+  #spacer
+  p#yogaText(style='display:none') Display Yoga studios here
+  // SCRIPT FOR THE CHECKBOXES
+  script.
+    function gymCheck() {
+    var checkBox = document.getElementById("gymCheck");
+    var text = document.getElementById("gymText");
+    if (checkBox.checked == true){
+    text.style.display = "block";
+    } else {
+    text.style.display = "none";
+    }
+    }
+    function yogaCheck() {
+    var checkBox = document.getElementById("yogaCheck");
+    var text = document.getElementById("yogaText");
+    if (checkBox.checked == true){
+    text.style.display = "block";
+    } else {
+    text.style.display = "none";
+    }
+    }
+#diy.tabcontent
+  h3 Recommended activity videos
+  iframe#video(align='center' src='https://www.youtube.com/embed/Ho9em79_0qg')
+#mySidenav.sidenav
+  a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+  a(href='#') Profile
+  a(href='#') Update
+  a(href='#') Logout
+  a(href='#') Contact Us
+script.
+  function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  }
+  function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  }
+script.
+  function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+  tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+  tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+  }
+footer
+  p  Fitbit App Copyright &copy; 2017
+
+
+
