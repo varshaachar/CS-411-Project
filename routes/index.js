@@ -15,7 +15,6 @@ router = express.Router();
 app = express();
 
 const yelp = require('yelp-fusion');
-const api_key = 'bfo0qpJ7RAoVa_CMt-TYVTG1pNFWaEE_t2QQYn7PGAdFM03USgsyBWm_2huuFnGExakrN1ag4v-TYdAmn-ywmDXp9tIS9e8uTmRlm_dKjkgauxqikWusn-vy9se6WnYx';
 const client = yelp.client(api_key);
 
 /* GET home page. */
