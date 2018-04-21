@@ -51,3 +51,61 @@ db.createCollection("users", {
       }
    }
 })
+
+
+// Recipe table
+db.createCollection("recipes", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "name", "ingredients", "directions"],
+         properties: {
+            category: {
+               bsonType: "string",
+               description: "must be a string"
+            },
+            name: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            lastname: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            age: {
+               bsonType: "int",
+               minimum: 15,
+               maximum: 80,
+               exclusiveMaximum: false,
+               description: "must be an integer in [ 15, 80 ] and is required"
+            }, 
+            gender: {
+               bsonType: "string",
+               description: "must be an integer"
+            },    
+            email: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            password: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            height: {
+               bsonType: "float",
+               minimum: 2,
+               maximum: 10,
+               exclusiveMaximum: false,
+               description: "must be an integer in [ 2, 10 ] and is required"
+            },
+            weight: {
+               bsonType: "float",
+               minimum: 50,
+               maximum: 600,
+               exclusiveMaximum: false,
+               description: "must be an integer in [ 50, 600 ] and is required"
+            }
+         }
+      }
+   }
+})
