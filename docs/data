@@ -68,42 +68,33 @@ db.createCollection("recipes", {
                bsonType: "string",
                description: "must be a string and is required"
             },
-            lastname: {
+            servings: {
+               bsonType: "string",
+               description: "must be a string"
+            },
+            ingredients: {
                bsonType: "string",
                description: "must be a string and is required"
-            },
-            age: {
-               bsonType: "int",
-               minimum: 15,
-               maximum: 80,
-               exclusiveMaximum: false,
-               description: "must be an integer in [ 15, 80 ] and is required"
             }, 
-            gender: {
+            directions: {
                bsonType: "string",
-               description: "must be an integer"
+               description: "must be a string and is required"
             },    
-            email: {
+            servingsize: {
                bsonType: "string",
-               description: "must be a string and is required"
+               description: "must be a string"
             },
-            password: {
+            calories: {
+               bsonType: "int",
+               description: "must be an int"
+            },
+            protein: {
                bsonType: "string",
-               description: "must be a string and is required"
+               description: "must be a string"
             },
-            height: {
-               bsonType: "float",
-               minimum: 2,
-               maximum: 10,
-               exclusiveMaximum: false,
-               description: "must be an integer in [ 2, 10 ] and is required"
-            },
-            weight: {
-               bsonType: "float",
-               minimum: 50,
-               maximum: 600,
-               exclusiveMaximum: false,
-               description: "must be an integer in [ 50, 600 ] and is required"
+            carbs: {
+               bsonType: "string",
+               description: "must be a string"
             }
          }
       }
