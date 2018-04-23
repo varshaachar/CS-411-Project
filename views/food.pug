@@ -1,0 +1,65 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width')
+  meta(name='description' content='Helping to lead a healthier life')
+  meta(name='keywords' content='health, fitness, diet')
+  meta(name='author' content='Varsha Achar')
+  title Fitbit App | Fitness
+  link(rel='stylesheet' href='/stylesheets/style.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+header
+  .container
+    #branding
+      h1  FITBIT APP
+    nav
+      ul
+        li
+          a(href='homepage.pug')  HOME
+        li
+          a(href='fitness.pug')  FITNESS
+        li
+          a(href='food.pug')  FOOD
+        li
+          span(onclick='openNav()')  MORE
+.tab
+  button.tablinks(onclick="openCity(event, 'restaurants')") Restaurant
+  button.tablinks(onclick="openCity(event, 'eatin')") Eat In
+#restaurants.tabcontent
+  h2 Recommended restaurants near you
+  p What information would you like?
+#eatin.tabcontent
+  h2 Recipe for #{name}:
+  h3 Ingredients:
+  p #{ingredients}
+  h3 Directions:
+  p #{directions}
+  #mySidenav.sidenav
+    a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+    a(href='#') Profile
+    a(href='#') Update
+    a(href='#') Logout
+    a(href='#') Contact Us
+  script.
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    }
+    function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    }
+  script.
+    function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
+  footer
+    p  Fitbit App Copyright &copy; 2017

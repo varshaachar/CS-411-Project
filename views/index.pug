@@ -6,7 +6,7 @@ head
   meta(name='keywords' content='health, fitness, diet')
   meta(name='author' content='Varsha Achar')
   title Fitbit App | Login
-  link(rel='stylesheet' href='./css/style.css')
+  link(rel='stylesheet' href='/stylesheets/style.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
 header
   .container
@@ -17,7 +17,7 @@ header
     nav
       ul
         li
-          a(href='signup.html')  No account? SIGN UP!
+          a(href='signup.pug')  No account? SIGN UP!
 section#login
   .container
     h1  LOGIN
@@ -34,7 +34,7 @@ section#login
         input#loginbtn.btn.btn-primary(type='submit' value='Login')
         // Add action for these two buttons
         #spacer
-      input#fblogin.btTxt.submit(type='image' src='./img/facebook-login.png' name='fblogin')
+      input#fblogin.btTxt.submit(type='image' src='/stylesheets/facebook-login.png' name='fblogin')
 footer
   p  Fitbit App Copyright &copy; 2017
 
