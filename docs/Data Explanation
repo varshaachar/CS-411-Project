@@ -9,15 +9,11 @@ this storing and primarily is stored to remember the user and keep track of thei
 entered for their profile can later be pulled from the database to choose for example the recipes because we need to know their dietary
 restrictions.
 
-3. We also stored the Spotify images and playlist links in the DB instead of accessing through the spotift API. The integration of
-this API was beyond what we needed for this simple task and we already integreated 3 other heavy API's. The links and images are
-stored based on their category (gym, zumba, yoga) and the data is then pulled when called.
-
-4. Since weather is constantly changing we sometimes use the DB to store the recent weather forecast so that we are not constantly
+3. Since weather is constantly changing we sometimes use the DB to store the recent weather forecast so that we are not constantly
 calling the API. Weather is stored with a timestamp in the DB which is read before pulling that data. If the weather stamp was within
-the last 15 minutes the weather is Cached, otherwise we disregard the stored weather and re-call the API. The new data recorded from
+the last 30 minutes the weather is Cached, otherwise we disregard the stored weather and re-call the API. The new data recorded from
 the call is then stored back into the database.
 
-5. One of the APIs we implemented was Yelp which was used for finding nearby restaurants and workout facilities. So that we are not
+4. One of the APIs we implemented was Yelp which was used for finding nearby restaurants and workout facilities. So that we are not
 constantly repeating the types of calls made to the API, all data pulled from the calls would be stored in the database so that if
 there was a common location being used we could pull the data from the DB and not make another API call.
