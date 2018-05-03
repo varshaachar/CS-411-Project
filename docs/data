@@ -100,3 +100,101 @@ db.createCollection("recipes", {
       }
    }
 })
+
+
+// Food table for restaurants
+db.createCollection("food", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "location", "nameofplace", "rating", "address", "phone"],
+         properties: {
+            location: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            nameofplace: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            rating: {
+               bsonType: "double",
+               description: "must be a double and is required"
+            },
+            address: {
+               bsonType: "Array",
+               description: "must be an array and is required"
+            },
+            phone: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            }
+         }
+      }
+   }
+})
+
+// Yelp table for fitness facilities
+db.createCollection("yelp", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "term", "location", "name", "rating", "address", "phone"],
+         properties: {
+            term: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            location: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            name: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            rating: {
+               bsonType: "double",
+               description: "must be a double and is required"
+            },
+            address: {
+               bsonType: "Array",
+               description: "must be an array and is required"
+            },    
+            phone: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            }
+         }
+      }
+   }
+})
+
+
+// Weather data
+db.createCollection("weather", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "timestamp", "weather", "description", "city"],
+         properties: {
+            timestamp: {
+               bsonType: "timestamp",
+               description: "must be a timestamp and is required"
+            },
+            city: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            weather: {
+               bsonType: "float",
+               description: "must be a float and is required"
+            },
+            description: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            }
+         }
+      }
+   }
+})
