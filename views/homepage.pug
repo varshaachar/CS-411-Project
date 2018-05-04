@@ -5,6 +5,7 @@ head
   meta(name='description' content='Helping to lead a healthier life')
   meta(name='keywords' content='health, fitness, diet')
   meta(name='author' content='Varsha Achar')
+<<<<<<< HEAD
   title Be Fit, BU | Homepage
   link(rel='stylesheet' href='/stylesheets/style.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
@@ -25,10 +26,28 @@ header
           a(href='/food')  FOOD
         li
           a(href='/music')  MUSIC
+=======
+  title Fitbit App | Homepage
+  link(rel='stylesheet' href='/stylesheets/style.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+header
+  .container
+    #branding
+      h1  FITBIT APP
+    nav
+      ul
+        li
+          a(href='homepage.pug')  HOME
+        li
+          a(href='fitness.pug')  FITNESS
+        li
+          a(href='homepage.pug')  FOOD
+>>>>>>> origin/master
         li
           span(onclick='openNav()')  MORE
 section#showcase
   .container
+<<<<<<< HEAD
     h1  WELCOME, #{name}!
     p  We care about your fitness, so we monitor your daily progress.
     p  Your goal: #{goal} | Steps recorded: #{avgsteps}
@@ -38,6 +57,16 @@ section#showcase
   a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
   a(href='/profile') Profile
   a(href='/logout') Logout
+=======
+    h1  WELCOME!
+    p  We care about your fitness, so we monitor your daily progress.
+    p  Temperature: #{temp}, #{desc}
+#mySidenav.sidenav
+  a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+  a(href='#') Profile
+  a(href='#') Update
+  a(href='#') Logout
+>>>>>>> origin/master
   a(href='/about') Contact Us
 script.
   function openNav() {
@@ -46,6 +75,7 @@ script.
   function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   }
+<<<<<<< HEAD
 section#boxes
   .container
     .box
@@ -65,3 +95,7 @@ section#boxes
         | Can you imagine working out without music? How boring would that be? We will provide links to Spotify playlists according the workout you choose.
 footer
   p  Be Fit, BU Copyright &copy; 2018
+=======
+footer
+  p  Fitbit App Copyright &copy; 2017
+>>>>>>> origin/master
