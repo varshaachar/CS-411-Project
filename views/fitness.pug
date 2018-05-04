@@ -5,15 +5,10 @@ head
   meta(name='description' content='Helping to lead a healthier life')
   meta(name='keywords' content='health, fitness, diet')
   meta(name='author' content='Varsha Achar')
-<<<<<<< HEAD
   title Be Fit, BU | Fitness
   link(rel='stylesheet' href='/stylesheets/style3.css')
   link(rel='shortcut icon' href='/images/favicon.ico')
 
-=======
-  title Fitbit App | Fitness
-  link(rel='stylesheet' href='/stylesheets/style.css')
->>>>>>> origin/master
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
 header
   .container
@@ -23,7 +18,6 @@ header
     nav
       ul
         li
-<<<<<<< HEAD
           a(href='homepage')  HOME
         li
           a(href='fitness')  FITNESS
@@ -31,13 +25,6 @@ header
           a(href='food')  FOOD
         li
           a(href='music')  MUSIC
-=======
-          a(href='homepage.pug')  HOME
-        li
-          a(href='fitness.pug')  FITNESS
-        li
-          a(href='homepage.pug')  FOOD
->>>>>>> origin/master
         li
           span(onclick='openNav()')  MORE
 .tab
@@ -99,7 +86,6 @@ header
                                   br
                                   | Phone: #{t_phone}
   #spacer
-<<<<<<< HEAD
   label.cont
     | Zumba
     input#zumbaCheck(type='checkbox' onclick='zumbaCheck()')
@@ -112,19 +98,9 @@ header
                                   | Address: #{z_address}
                                   br
                                   | Phone: #{z_phone}
-=======
-  p#yogaText(style='display:none') Name: #{y_name}
-                                  br
-                                  | Rating: #{y_rating}
-                                  br
-                                  | Address: #{y_address}
-                                  br
-                                  | Phone: #{y_phone}
->>>>>>> origin/master
   // SCRIPT FOR THE CHECKBOXES
   script.
     function gymCheck() {
-    var keyword = keyword;
     var checkBox = document.getElementById("gymCheck");
     var text = document.getElementById("gymText");
     if (checkBox.checked == true){
@@ -136,14 +112,12 @@ header
     function yogaCheck() {
     var checkBox = document.getElementById("yogaCheck");
     var text = document.getElementById("yogaText");
-
     if (checkBox.checked == true){
     text.style.display = "block";
     } else {
     text.style.display = "none";
     }
     }
-<<<<<<< HEAD
     function pilatesCheck() {
     var checkBox = document.getElementById("pilatesCheck");
     var text = document.getElementById("pilatesText");
@@ -172,8 +146,6 @@ header
     }
     }
 
-=======
->>>>>>> origin/master
     function setURL(thelink){
     video.src=thelink;
     }
@@ -199,21 +171,12 @@ header
     input(type='radio' name='radio' value='https://www.youtube.com/embed/RZgIv9tVvLE' onclick='setURL(this.value)')
     |  Pilates
     span.checkmark1
-<<<<<<< HEAD
   #myvideo
     iframe#video(align='center' src='')
 #mySidenav.sidenav
   a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
   a(href='/profile') Profile
   a(href='/logout') Logout
-=======
-  iframe#video(align='center' src='')
-#mySidenav.sidenav
-  a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
-  a(href='#') Profile
-  a(href='#') Update
-  a(href='#') Logout
->>>>>>> origin/master
   a(href='/about') About Us
 script.
   function openNav() {
@@ -236,11 +199,6 @@ script.
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
   }
-<<<<<<< HEAD
 
 footer
   p  Be Fit, BU Copyright &copy; 2018
-=======
-footer
-  p  Fitbit App Copyright &copy; 2017
->>>>>>> origin/master
