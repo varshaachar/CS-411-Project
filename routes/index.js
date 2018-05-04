@@ -10,10 +10,6 @@ Lingwen Kong
 // GETTING API KEYS, checking for node modules
 
 var express = require('express');
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";
-
-
 router = express.Router();
 var config = require('config');
 var MongoClient = require('mongodb').MongoClient;
@@ -21,12 +17,7 @@ var url = "mongodb://localhost:27017/";
 var cities = require('cities');
 const FitbitApiClient = require("fitbit-node");
 app = express();
-<<<<<<< HEAD
 const yelp_key = config.get('yelp_api');
-=======
-// TODO - ADD TO CONFIG FILE
-const api_key = 'bfo0qpJ7RAoVa_CMt-TYVTG1pNFWaEE_t2QQYn7PGAdFM03USgsyBWm_2huuFnGExakrN1ag4v-TYdAmn-ywmDXp9tIS9e8uTmRlm_dKjkgauxqikWusn-vy9se6WnYx';
->>>>>>> origin/master
 const yelp = require('yelp-fusion');
 var user_id = "";
 var diet = "";
@@ -81,7 +72,6 @@ res.render('fsuccess', {message: "Fibit Authentication was successful"});
     res.render('error', {message: "Oops, something went wrong!"});
 });
 
-<<<<<<< HEAD
 });
 
 
@@ -165,49 +155,15 @@ app.post('/signup2', function (req, res) {
 
 
 /* GET index page. */
-=======
-// empty at first
-var gymResult = {
-    name: "",
-    rating: "",
-    address: "",
-    phone: ""
-};
-
-// empty at first
-var yogaResult = {
-    name: "",
-    rating: "",
-    address: "",
-    phone: ""
-};
-
-
-const OpenWeatherMapHelper = require("openweathermap-node");
-const helper = new OpenWeatherMapHelper(
-    {
-        // TODO - ADD TO CONFIG FILE
-        APPID: '067147b8ff7bee8436e1ffb9ec383a2b',
-        units: "imperial"
-    }
-);
-
-/* GET home page. */
->>>>>>> origin/master
 app.get('/', function (req, res) {
     res.render('index');
 });
 
-<<<<<<< HEAD
 // GET about us page - has
-=======
-// GET about us page
->>>>>>> origin/master
 app.get('/about', function (req, res) {
     res.render('about');
 });
 
-<<<<<<< HEAD
 //  POST HOMEPAGE
 app.post('/homepage', function (req, res) {
 
@@ -226,12 +182,6 @@ app.post('/homepage', function (req, res) {
 
     user_city = "Boston";
 
-=======
-// GET homepage
-app.get('/homepage', function (req, res) {
-
-    var user_city = "Boston";
->>>>>>> origin/master
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("fitbit");
@@ -246,7 +196,6 @@ app.get('/homepage', function (req, res) {
                         console.log(err);
                     }
                     else{
-<<<<<<< HEAD
                         var to_insert = { timestamp: timestamp, city: user_city, weather: currentWeather.main.temp, description: currentWeather.weather[0].description };
                 // add it to the db
                 dbo.collection("weather").insertOne(to_insert, function(err, res) {
@@ -271,23 +220,10 @@ app.get('/homepage', function (req, res) {
                     console.log("new weather document updated");
                 });
             }
-=======
-                        console.log(currentWeather)
-                        console.log(currentWeather.weather[0].description); //gives description of weather
-                        console.log(currentWeather.main.temp);      //gives temp
-                        var to_insert = { city: user_city, weather: currentWeather.main.temp, description: currentWeather.weather[0].description };
-                        // add it to the db
-                        dbo.collection("weather").insertOne(to_insert, function(err, res) {
-                        if (err) throw err;
-                        console.log("1 document inserted");
-                        });
-                    }
->>>>>>> origin/master
             });
             }
 
         });
-<<<<<<< HEAD
         var message = "";
         // now, retrieving from database to render it on the front end
         dbo.collection("weather").findOne({city: user_city}, function(err, result) {
@@ -328,75 +264,9 @@ app.get('/homepage', function (req, res) {
             });
 
         });
-=======
-        // now, retrieving from database to render it on the front end
-        dbo.collection("weather").findOne({city: user_city}, function(err, result) {
-            if (err) throw err;
-            db.close();
-            res.render('homepage', {temp: result.weather, desc: result.description});
-  });
-
 
     });
-//
-});
 
-/* Fitness page */
-app.get('/fitness', function (req, res) {
-
-    // GYMS!
-    // Search request for gyms - includes keyword 'gym' and location 'boston' (for now)
-    var gymSearchRequest = {
-        term: 'gym',
-        location: 'boston'
-    };
-
-
-    // noinspection JSAnnotator
-    client.search(gymSearchRequest).then(response => {
-
-        g = response.jsonBody.businesses[0];
->>>>>>> origin/master
-
-    console.log(g);  // logging the search results
-    gymResult.name = g.name;
-    gymResult.address = g.location.display_address;
-    gymResult.phone = g.display_phone;
-    gymResult.rating = g.rating;
-
-
-});
-
-    // YOGA!
-    // Search request for yoga - includes keyword 'yoga' and location 'boston' (for now)
-    var yogaSearchRequest = {
-        term: 'yoga',
-        location: 'boston'
-    };
-
-
-    // noinspection JSAnnotator
-    client.search(yogaSearchRequest).then(response => {
-
-        y = response.jsonBody.businesses[0];
-
-    console.log(y);  // logging the search results
-    yogaResult.name = y.name;
-    yogaResult.address = y.location.display_address;
-    yogaResult.phone = y.display_phone;
-    yogaResult.rating = y.rating;
-
-    res.render('fitness', {
-        g_name: gymResult.name,
-        g_rating: gymResult.rating,
-        g_address: gymResult.address,
-        g_phone: gymResult.phone, y_name: yogaResult.name,
-        y_rating: yogaResult.rating,
-        y_address: yogaResult.address,
-        y_phone: yogaResult.phone
-    });
-
-<<<<<<< HEAD
 });
 
 // GET HOMEPAGE
@@ -664,25 +534,16 @@ app.get('/fitness', function (req, res) {
                 z_name: result[4].name, z_rating: result[4].rating, z_address: result[4].address, z_phone: result[4].phone});
         });
     });
-=======
-
-});
-
->>>>>>> origin/master
 });
 
 // GET food page
 app.get('/food', function (req, res) {
 
-<<<<<<< HEAD
     var location = "Boston";
-=======
->>>>>>> origin/master
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("fitbit");
 
-<<<<<<< HEAD
         dbo.collection("food").findOne({location: location}, function(err, res) {
             if (err) throw err;
 
@@ -772,18 +633,6 @@ app.get('/music', function (req, res) {
     res.render('music');
 });
 
-=======
-        dbo.collection("recipes").findOne({}, function(err, result) {
-            if (err) throw err;
-            db.close();
-
-            res.render('food', {name: result.name, ingredients: result.ingredients, directions: result.directions});
-
-        });
-    });
-});
-
->>>>>>> origin/master
 module.exports = app;
 
 
