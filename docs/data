@@ -1,0 +1,200 @@
+// Users table
+
+db.createCollection("users", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "firstname", "lastname", "age", "email", "password"],
+         properties: {
+            firstname: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            lastname: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            age: {
+               bsonType: "int",
+               minimum: 15,
+               maximum: 80,
+               exclusiveMaximum: false,
+               description: "must be an integer in [ 15, 80 ] and is required"
+            }, 
+            gender: {
+               bsonType: "string",
+               description: "must be an integer"
+            },    
+            email: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            password: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            height: {
+               bsonType: "float",
+               minimum: 2,
+               maximum: 10,
+               exclusiveMaximum: false,
+               description: "must be an integer in [ 2, 10 ] and is required"
+            },
+            weight: {
+               bsonType: "float",
+               minimum: 50,
+               maximum: 600,
+               exclusiveMaximum: false,
+               description: "must be an integer in [ 50, 600 ] and is required"
+            }
+         }
+      }
+   }
+})
+
+
+// Recipe table
+db.createCollection("recipes", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "name", "ingredients", "directions"],
+         properties: {
+            category: {
+               bsonType: "string",
+               description: "must be a string"
+            },
+            name: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            servings: {
+               bsonType: "string",
+               description: "must be a string"
+            },
+            ingredients: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            }, 
+            directions: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },    
+            servingsize: {
+               bsonType: "string",
+               description: "must be a string"
+            },
+            calories: {
+               bsonType: "int",
+               description: "must be an int"
+            },
+            protein: {
+               bsonType: "string",
+               description: "must be a string"
+            },
+            carbs: {
+               bsonType: "string",
+               description: "must be a string"
+            }
+         }
+      }
+   }
+})
+
+
+// Food table for restaurants
+db.createCollection("food", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "location", "nameofplace", "rating", "address", "phone"],
+         properties: {
+            location: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            nameofplace: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            rating: {
+               bsonType: "double",
+               description: "must be a double and is required"
+            },
+            address: {
+               bsonType: "Array",
+               description: "must be an array and is required"
+            },
+            phone: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            }
+         }
+      }
+   }
+})
+
+// Yelp table for fitness facilities
+db.createCollection("yelp", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "term", "location", "name", "rating", "address", "phone"],
+         properties: {
+            term: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            location: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            name: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            rating: {
+               bsonType: "double",
+               description: "must be a double and is required"
+            },
+            address: {
+               bsonType: "Array",
+               description: "must be an array and is required"
+            },    
+            phone: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            }
+         }
+      }
+   }
+})
+
+
+// Weather data
+db.createCollection("weather", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "timestamp", "weather", "description", "city"],
+         properties: {
+            timestamp: {
+               bsonType: "timestamp",
+               description: "must be a timestamp and is required"
+            },
+            city: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            weather: {
+               bsonType: "float",
+               description: "must be a float and is required"
+            },
+            description: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            }
+         }
+      }
+   }
+})

@@ -1,0 +1,56 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width')
+  meta(name='description' content='Helping to lead a healthier life')
+  meta(name='keywords' content='health, fitness, diet')
+  meta(name='author' content='Varsha Achar')
+  title Be Fit, BU | Profile
+  link(rel='stylesheet' href='/stylesheets/style.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='shortcut icon' href='/images/favicon.ico')
+
+header
+  .container
+    #branding
+      img(src='/images/logo.jpg')
+      h1 Be Fit, BU
+    nav
+      ul
+        li
+          a(href='/homepage')  HOME
+        li
+          a(href='/fitness')  FITNESS
+        li
+          a(href='/food')  FOOD
+        li
+          a(href='/music')  MUSIC
+        li
+          span(onclick='openNav()')  MORE
+section#profileshowcase
+  .container
+    h1 YOUR PROFILE
+    p  #{errmsg}
+    p  Name: #{fname} #{lname}
+    p  Email: #{email}
+    p  Age: #{age} years
+    p  Gender: #{gender}
+    p  Height: #{height} ft
+    p  Weight: #{weight} pounds
+    p  Goal: #{goal} steps
+    p  Diet: #{diet}
+    p  Steps: #{steps}
+#mySidenav.sidenav
+  a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+  a(href='/profile') Profile
+  a(href='/logout') Logout
+  a(href='/about') Contact Us
+script.
+  function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  }
+  function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  }
+footer
+  p  Be Fit, BU Copyright &copy; 2018

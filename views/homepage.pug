@@ -1,0 +1,67 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width')
+  meta(name='description' content='Helping to lead a healthier life')
+  meta(name='keywords' content='health, fitness, diet')
+  meta(name='author' content='Varsha Achar')
+  title Be Fit, BU | Homepage
+  link(rel='stylesheet' href='/stylesheets/style.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='shortcut icon' href='/images/favicon.ico')
+
+header
+  .container
+    #branding
+      img(src='/images/logo.jpg')
+      h1 Be Fit, BU
+    nav
+      ul
+        li
+          a(href='/homepage')  HOME
+        li
+          a(href='/fitness')  FITNESS
+        li
+          a(href='/food')  FOOD
+        li
+          a(href='/music')  MUSIC
+        li
+          span(onclick='openNav()')  MORE
+section#showcase
+  .container
+    h1  WELCOME, #{name}!
+    p  We care about your fitness, so we monitor your daily progress.
+    p  Your goal: #{goal} | Steps recorded: #{avgsteps}
+    p  It is #{temp} degrees, with #{desc}
+    p  #{msg}
+#mySidenav.sidenav
+  a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+  a(href='/profile') Profile
+  a(href='/logout') Logout
+  a(href='/about') Contact Us
+script.
+  function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  }
+  function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  }
+section#boxes
+  .container
+    .box
+      img(src='/images/weights.jpg')
+      h3 FITNESS
+      p
+        | Not a fan of running? Which is your favorite workout? Find gyms, yoga centers, a personal trainer, and more! Also find DIY videos for different types of workouts.
+    .box
+      img(src='/images/food.jpg')
+      h3 FOOD
+      p
+        | Diet is a very important part of staying fit. Find healthy places to eat near you. Would you rather stay in? Not to worry, we have many healthy recipes, including vegan and vegetarian options.
+    .box
+      img(src='/images/music.jpg')
+      h3 MUSIC
+      p
+        | Can you imagine working out without music? How boring would that be? We will provide links to Spotify playlists according the workout you choose.
+footer
+  p  Be Fit, BU Copyright &copy; 2018

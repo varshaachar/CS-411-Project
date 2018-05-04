@@ -1,0 +1,58 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width')
+  meta(name='description' content='Helping to lead a healthier life')
+  meta(name='keywords' content='health, fitness, diet')
+  meta(name='author' content='Varsha Achar')
+  title Be Fit, BU | Music
+  link(rel='stylesheet' href='/stylesheets/style.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='shortcut icon' href='/images/favicon.ico')
+
+header
+  .container
+    #branding
+      img(src='/images/logo.jpg')
+      h1 Be Fit, BU
+    nav
+      ul
+        li
+          a(href='/homepage')  HOME
+        li
+          a(href='/fitness')  FITNESS
+        li
+          a(href='/food')  FOOD
+        li
+          a(href='/music')  MUSIC
+        li
+          span(onclick='openNav()')  MORE
+section#musicshowcase
+  .container
+    h1 Some playlists for you..
+    br
+    p  GYM
+    a(href='https://open.spotify.com/user/spotify/playlist/37i9dQZF1DXdURFimg6Blm')
+        img(src='https://i.scdn.co/image/aba81f752255bd04bd261b158d03d5ec31eb4c16')
+    br
+    p  YOGA
+    a(href='https://open.spotify.com/user/spotify/playlist/37i9dQZF1DX9uKNf5jGX6m')
+        img(src='https://i.scdn.co/image/9e7ebc77c780f0d850a21627f98f5253e664db7e')
+    br
+    p  ZUMBA
+    a(href='https://open.spotify.com/user/pcnaimad/playlist/2SfLSuD1i4z67jGqVTtIcE')
+        img(src='https://pl.scdn.co/images/pl/default/f17d36053986ef89e1b0c6036dcfda8a562a0375')
+#mySidenav.sidenav
+  a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+  a(href='/profile') Profile
+  a(href='/logout') Logout
+  a(href='/about') Contact Us
+script.
+  function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  }
+  function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  }
+footer
+  p  Be Fit, BU Copyright &copy; 2018

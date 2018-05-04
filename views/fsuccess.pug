@@ -25,5 +25,22 @@ header
 section#login
   .container
     h3 #{message}
+    h2 Now, we need your location*
+    button#locbtn(onclick='getLocation()') Get Location
+    form(method='post' action="/homepage" align='center')
+        input#contbtn.btn.btn-primary(type='submit' value='CONTINUE')
+    p *If you choose not to provide location, default location will be set to Boston.
+
+script.
+  function getLocation() {
+  if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(sendPosition);
+  }
+  }
+  function sendPosition(position) {
+    console.log(position.coords.latitude);
+    $.post('/homepage', { latitude: position.coords.latitude, longitude: position.coords.longitude })
+   }
 footer
   p  Be Fit, BU Copyright &copy; 2018
+

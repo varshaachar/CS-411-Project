@@ -1,0 +1,19 @@
+For our project we decided to use MongoDB which stored some of the information we needed for our app including:
+
+1. All of our recipes for our food page are stored in the DB separated into certain categories based on diet restrictions such as
+Vegan, Vegetarian, etc. The recipes are then pulled and randomly displayed on our food page depending on the user. Storing our recipes
+in the DB was much easier (and cheaper) than using a recipe API.
+
+2. When the user signs up for our website, all of the data that is entered will be put into our DB. We designed certain tables for
+this storing and primarily is stored to remember the user and keep track of their certain profile characteristics. These details the user 
+entered for their profile can later be pulled from the database to choose for example the recipes because we need to know their dietary
+restrictions.
+
+3. Since weather is constantly changing we sometimes use the DB to store the recent weather forecast so that we are not constantly
+calling the API. Weather is stored with a timestamp in the DB which is read before pulling that data. If the weather stamp was within
+the last 30 minutes the weather is Cached, otherwise we disregard the stored weather and re-call the API. The new data recorded from
+the call is then stored back into the database.
+
+4. One of the APIs we implemented was Yelp which was used for finding nearby restaurants and workout facilities. So that we are not
+constantly repeating the types of calls made to the API, all data pulled from the calls would be stored in the database so that if
+there was a common location being used we could pull the data from the DB and not make another API call.

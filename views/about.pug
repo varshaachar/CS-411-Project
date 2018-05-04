@@ -1,0 +1,165 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width')
+  meta(name='description' content='Helping to lead a healthier life')
+  meta(name='keywords' content='health, fitness, diet')
+  meta(name='author' content='Varsha Achar')
+  title Be Fit, BU | About Us
+  link(rel='stylesheet' href='/stylesheets/style.css')
+  link(rel='shortcut icon' href='/images/favicon.ico')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+header
+  .container
+    #branding
+      img(src='/images/logo.jpg')
+      h1 Be Fit, BU
+    nav
+      ul
+        li
+          a(href='homepage')  HOME
+        li
+          a(href='fitness')  FITNESS
+        li
+          a(href='food')  FOOD
+        li
+          a(href='music')  MUSIC
+        li
+          span(onclick='openNav()')  MORE
+section#main
+  .container
+    #main-col
+      h1.page-title About Us
+      #profiles
+        .profile-card
+          #avatar
+            // here’s the avatar
+            img(src='/images/Varsha.png')
+            // the username
+            h1 Varsha Achar
+            // and role or location
+            h2 - Backend and Frontend developer -
+          // bit of a bio; who are you?
+          .profile-bio
+            p Hello there!
+            p
+              | I am Senior studying Computer Science, and focus more on backend development.
+              br
+              | I code in Python, C, C++, Java, and Javascript. I am also familiar with HTML and CSS.
+          ul.profile-social-links
+            li
+              a(href='https://github.com/varshaachar')
+                img(src='/images/github.svg')
+
+            li
+              a(href='https://www.facebook.com/profile.php?id=100003688087851')
+                img(src='/images/facebook.svg')
+
+            li
+              a(href='https://instagram.com')
+                img(src='/images/instagram.svg')
+
+        .profile-card
+          #avatar
+            // here’s the avatar
+            img(src='/images/Payton.jpg')
+            // the username
+            h1 Payton Hauck
+            // and role or location
+            h2 - Backend developer -
+          // bit of a bio; who are you?
+          .profile-bio
+            p Hi!
+            p
+              | I am a junior studying Computer Engineering.
+              br
+              | My primary language is C/C++ but I also work with Javascript. I mainly deal with the backend development, but can also work with front end stuff.
+
+          ul.profile-social-links
+
+            li
+              a(href='https://github.com/paytonhauck')
+                img(src='/images/github.svg')
+
+            li
+              a(href='https://www.facebook.com/payton.hauck')
+                img(src='/images/facebook.svg')
+
+            li
+              a(href='https://instagram.com')
+                img(src='/images/instagram.svg')
+
+        .profile-card
+          #avatar
+            // here’s the avatar
+            img(src='/images/Justin.jpg')
+            // the username
+            h1 Lingwen Kong
+            // and role or location
+            h2 - Javascript module developer -
+          // bit of a bio; who are you?
+          .profile-bio
+            p Hey everyone!
+            p
+              | I am Computer Science major in my Senior Year, and I come from China.
+              br
+              | I work with Python, Java, and C++.
+
+          ul.profile-social-links
+
+            li
+              a(href='https://github.com/klwj2013')
+                img(src='/images/github.svg')
+
+            li
+              a(href='https://www.facebook.com/lingwen.kong.92?ref=br_rs')
+                img(src='/images/facebook.svg')
+
+            li
+              a(href='https://instagram.com')
+                img(src='/images/instagram.svg')
+
+        .profile-card
+          #avatar
+            // here’s the avatar
+            img(src='/images/Agustin.jpg')
+            // the username
+            h1 Agustin Vasquez
+            // and role or location
+            h2 - Backend developer -
+          // bit of a bio; who are you?
+          .profile-bio
+            p Hello!
+            p
+              | I'm a Senior in CAS studying Mathematics and Computer Science. I work in C, python,and Java.
+              br
+              | I primarily work backend and structure analysis.
+
+          ul.profile-social-links
+
+            li
+              a(href='https://github.com/AgustinVasquez')
+                img(src='/images/github.svg')
+
+            li
+              a(href='https://www.facebook.com/agustin.vasquez.796?ref=br_rs')
+                img(src='/images/facebook.svg')
+
+            li
+              a(href='https://instagram.com')
+                img(src='/images/instagram.svg')
+
+#mySidenav.sidenav
+  a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+  a(href='/profile') Profile
+  a(href='/logout') Logout
+  a(href='/about') About Us
+script.
+  function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  }
+  function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  }
+footer
+  p  Be Fit, BU Copyright &copy; 2018

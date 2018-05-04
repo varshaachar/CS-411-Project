@@ -5,7 +5,7 @@ head
   meta(name='description' content='Helping to lead a healthier life')
   meta(name='keywords' content='health, fitness, diet')
   meta(name='author' content='Varsha Achar')
-  title Be Fit, BU | Message
+  title Be Fit, BU | Fitbit Authentication
   link(rel='stylesheet' href='/stylesheets/style.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
   link(rel='shortcut icon' href='/images/favicon.ico')
@@ -15,15 +15,14 @@ header
     #branding
       img(src='/images/logo.jpg')
       h1 Be Fit, BU
-    nav
-      ul
-        li
-          a(href='/')  LOGIN
-        li
-          a(href='signup')  SIGN UP
 
 section#login
   .container
-    h3 #{message}
+    h1  Now, let's authenticate with Fitbit
+    h3  Clicking on the logo below will take you to Fitbit's login page
+    form(method='get' action='/authorize')
+        input#fitbitlogin.btTxt.submit(type='image' src='/images/fitbit-logo.png' name='fitbitlogin')
+
 footer
   p  Be Fit, BU Copyright &copy; 2018
+

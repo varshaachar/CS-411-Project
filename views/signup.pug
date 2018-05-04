@@ -1,0 +1,68 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width')
+  meta(name='description' content='Helping to lead a healthier life')
+  meta(name='keywords' content='health, fitness, diet')
+  meta(name='author' content='Varsha Achar')
+  title Be Fit, BU | Sign Up
+  link(rel='stylesheet' href='/stylesheets/style.css')
+  link(rel='shortcut icon' href='/images/favicon.ico')
+
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+header
+  .container
+    #branding
+      img(src='/images/logo.jpg')
+      h1 Be Fit, BU
+    nav
+      ul
+        li
+          a(href='/')  SIGN IN
+section#signup
+  .container
+    h1  SIGN UP
+    h2  Answer these questions about yourself. Fields marked * are required.
+    #inputs.form-group
+      form(method='post' action="/signup2" align='center')
+        p
+          | *First Name:
+          input#inputbox.form-control(type='text' name='fname' placeholder='Enter first name' required='')
+        p
+          | *Last Name:
+          input#inputbox.form-control(type='text' name='lname' placeholder='Enter last name' required='')
+        p
+          | *Age:
+          input#inputbox.form-control(type='number' min='1' name='age' placeholder='In years' required='')
+        p
+          | Gender:
+          input#radiobtnM.form-control(type='radio' name='gender')
+          |  Male
+          input#radiobtnF.form-control(type='radio' name='gender')
+          |  Female
+          input#radiobtnO.form-control(type='radio' name='gender')
+          |  Other
+        p
+          | *E-mail:
+          input#inputbox.form-control(type='email' name='email' placeholder='Enter email address' required='')
+        // Add password validation (W3Schools) if you can
+        p
+          | *Password:
+          input#inputbox.form-control(type='password' name='password' placeholder='Enter password' required='')
+        p
+          | Height:
+          input#inputbox.form-control(type='text' name='height' placeholder='Height in feet')
+        p
+          | Weight:
+          input#inputbox.form-control(type='text' name='weight' placeholder='Weight in pounds')
+        p
+          | *Steps Goal:
+          input#inputbox.form-control(type='number' name='sgoal' placeholder='Set a goal' required='')
+        p
+          | Diet:
+          input#inputbox.form-control(type='text' name='diet' placeholder='Any diet restrictions?')
+        #spacer
+        input#signupbtn.btn.btn-primary(type='submit' value='Sign Up')
+        #spacer
+footer
+  p  Be Fit, BU Copyright &copy; 2018

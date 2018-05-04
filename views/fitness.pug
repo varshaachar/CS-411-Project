@@ -1,30 +1,34 @@
 doctype html
 head
-
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width')
   meta(name='description' content='Helping to lead a healthier life')
   meta(name='keywords' content='health, fitness, diet')
   meta(name='author' content='Varsha Achar')
-  title Fitbit App | Fitness
-  link(rel='stylesheet', href='/stylesheets/style.css')
+  title Be Fit, BU | Fitness
+  link(rel='stylesheet' href='/stylesheets/style3.css')
+  link(rel='shortcut icon' href='/images/favicon.ico')
+
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
 header
   .container
     #branding
-      h1  FITBIT APP
+      img(src='/images/logo.jpg')
+      h1 Be Fit, BU
     nav
       ul
         li
-          a(href='homepage.html')  HOME
+          a(href='homepage')  HOME
         li
-          a(href='fitness.html')  FITNESS
+          a(href='fitness')  FITNESS
         li
-          a(href='homepage.html')  FOOD
+          a(href='food')  FOOD
+        li
+          a(href='music')  MUSIC
         li
           span(onclick='openNav()')  MORE
 .tab
-  button.tablinks(onclick="openCity(event, 'facilities')") Facilites
+  button.tablinks(onclick="openCity(event, 'facilities')") Facilities
   button.tablinks(onclick="openCity(event, 'diy')") Do It Yourself
 #facilities.tabcontent
   h2 Recommended activities near you
@@ -33,28 +37,67 @@ header
     | Gym
     input#gymCheck(type='checkbox' onclick='gymCheck()')
     span.checkmark
-  #spacer
-  p
-    block content
-        p#gymText(style='display:none')
-            form#searchBar(action='/' method='POST')
-                    p Enter a keyword:
-                    input(type='text' placeholder='Enter fitness place' name='term' id  = 'term')
-                    p Enter the location:
-                    input(type='text' placeholder='City or Address' name='location' id  = 'location')
-                    button.fa.fa-search(type='submit' id  = 'submit') Search
+    #spacer
+    p#gymText(style='display:none') Name: #{g_name}
+                                    br
+                                    | Rating: #{g_rating}
+                                    br
+                                    | Address: #{g_address}
+                                    br
+                                    | Phone: #{g_phone}
 
-        p Name: #{name}
-        p Rating: #{rating}
-        p Address: #{address}
-        p Phone: #{phone}
   #spacer
   label.cont
     | Yoga
     input#yogaCheck(type='checkbox' onclick='yogaCheck()')
     span.checkmark
+    #spacer
+    p#yogaText(style='display:none') Name: #{y_name}
+                                  br
+                                  | Rating: #{y_rating}
+                                  br
+                                  | Address: #{y_address}
+                                  br
+                                  | Phone: #{y_phone}
   #spacer
-  p#yogaText(style='display:none') Display Yoga studios here
+  label.cont
+    | Pilates
+    input#pilatesCheck(type='checkbox' onclick='pilatesCheck()')
+    span.checkmark
+    #spacer
+    p#pilatesText(style='display:none') Name: #{p_name}
+                                  br
+                                  | Rating: #{p_rating}
+                                  br
+                                  | Address: #{p_address}
+                                  br
+                                  | Phone: #{p_phone}
+  #spacer
+  label.cont
+    | Trainer
+    input#trainerCheck(type='checkbox' onclick='trainerCheck()')
+    span.checkmark
+    #spacer
+    p#trainerText(style='display:none') Name: #{t_name}
+                                  br
+                                  | Rating: #{t_rating}
+                                  br
+                                  | Address: #{t_address}
+                                  br
+                                  | Phone: #{t_phone}
+  #spacer
+  label.cont
+    | Zumba
+    input#zumbaCheck(type='checkbox' onclick='zumbaCheck()')
+    span.checkmark
+    #spacer
+    p#zumbaText(style='display:none') Name: #{z_name}
+                                  br
+                                  | Rating: #{z_rating}
+                                  br
+                                  | Address: #{z_address}
+                                  br
+                                  | Phone: #{z_phone}
   // SCRIPT FOR THE CHECKBOXES
   script.
     function gymCheck() {
@@ -75,15 +118,66 @@ header
     text.style.display = "none";
     }
     }
+    function pilatesCheck() {
+    var checkBox = document.getElementById("pilatesCheck");
+    var text = document.getElementById("pilatesText");
+    if (checkBox.checked == true){
+    text.style.display = "block";
+    } else {
+    text.style.display = "none";
+    }
+    }
+    function trainerCheck() {
+    var checkBox = document.getElementById("trainerCheck");
+    var text = document.getElementById("trainerText");
+    if (checkBox.checked == true){
+    text.style.display = "block";
+    } else {
+    text.style.display = "none";
+    }
+    }
+    function zumbaCheck() {
+    var checkBox = document.getElementById("zumbaCheck");
+    var text = document.getElementById("zumbaText");
+    if (checkBox.checked == true){
+    text.style.display = "block";
+    } else {
+    text.style.display = "none";
+    }
+    }
+
+    function setURL(thelink){
+    video.src=thelink;
+    }
 #diy.tabcontent
-  h3 Recommended activity videos
-  iframe#video(align='center' src='https://www.youtube.com/embed/Ho9em79_0qg')
+  h3 Choose a workout for recommended videos
+  label.container1
+    input(type='radio' name='radio' value='https://www.youtube.com/embed/N5ViYeGJOCA' onclick='setURL(this.value)')
+    |  Abs
+    span.checkmark1
+  label.container1
+    input(type='radio' name='radio' value='https://www.youtube.com/embed/cly7lGbAyyk' onclick='setURL(this.value)')
+    |  Kickboxing
+    span.checkmark1
+  label.container1
+    input(type='radio' name='radio' value='https://www.youtube.com/embed/EkeWuJE3aW8' onclick='setURL(this.value)')
+    |  Upper Body
+    span.checkmark1
+  label.container1
+    input(type='radio' name='radio' value='https://www.youtube.com/embed/rGyPHFcpSDI' onclick='setURL(this.value)')
+    |  Lower Body
+    span.checkmark1
+  label.container1
+    input(type='radio' name='radio' value='https://www.youtube.com/embed/RZgIv9tVvLE' onclick='setURL(this.value)')
+    |  Pilates
+    span.checkmark1
+  #myvideo
+    iframe#video(align='center' src='')
 #mySidenav.sidenav
   a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
-  a(href='#') Profile
-  a(href='#') Update
-  a(href='#') Logout
-  a(href='#') Contact Us
+  a(href='/profile') Profile
+  a(href='/logout') Logout
+  a(href='/about') About Us
 script.
   function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -105,8 +199,6 @@ script.
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
   }
+
 footer
-  p  Fitbit App Copyright &copy; 2017
-
-
-
+  p  Be Fit, BU Copyright &copy; 2018

@@ -1,0 +1,103 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width')
+  meta(name='description' content='Helping to lead a healthier life')
+  meta(name='keywords' content='health, fitness, diet')
+  meta(name='author' content='Varsha Achar')
+  title Be Fit, BU | Food
+  link(rel='stylesheet' href='/stylesheets/style2.css')
+  link(rel='shortcut icon' href='/images/favicon.ico')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+header
+  .container
+    #branding
+      img(src='/images/logo.jpg')
+      h1 Be Fit, BU
+    nav
+      ul
+        li
+          a(href='/homepage')  HOME
+        li
+          a(href='/fitness')  FITNESS
+        li
+          a(href='/food')  FOOD
+        li
+          a(href='/music')  MUSIC
+        li
+          span(onclick='openNav()')  MORE
+.tab
+  button.tablinks(onclick="openCity(event, 'restaurants')") Restaurant
+  button.tablinks(onclick="openCity(event, 'eatin')") Eat In
+
+section#food
+    #restaurants.tabcontent
+      h2 RESTAURANTS NEAR YOU
+      #spacer
+      p#oneandthree #{f1_name}
+                    br
+                    | Rating: #{f1_rating}
+                    br
+                    | Address: #{f1_address}
+                    br
+                    | Phone: #{f1_phone}
+      #spacer
+      p#twoandfour #{f2_name}
+                   br
+                   | Rating: #{f2_rating}
+                   br
+                   | Address: #{f2_address}
+                   br
+                   | Phone: #{f2_phone}
+      #spacer
+      p#oneandthree #{f3_name}
+                    br
+                    | Rating: #{f3_rating}
+                    br
+                    | Address: #{f3_address}
+                    br
+                    | Phone: #{f3_phone}
+      #spacer
+      p#twoandfour #{f4_name}
+                   br
+                   | Rating: #{f4_rating}
+                   br
+                   | Address: #{f4_address}
+                   br
+                   | Phone: #{f4_phone}
+
+
+    #eatin.tabcontent
+      h2 Recipe for #{name}:
+      h3#recipeh INGREDIENTS:
+      p#recipe #{ingredients}
+      h3#recipeh DIRECTIONS:
+      p#recipe #{directions}
+#mySidenav.sidenav
+  a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+  a(href='/profile') Profile
+  a(href='/logout') Logout
+  a(href='/about') About Us
+script.
+  function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  }
+  function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  }
+script.
+  function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+  tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+  tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+  }
+footer
+    p  Be Fit, BU Fitbit App Copyright &copy; 2018
